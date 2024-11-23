@@ -35,19 +35,21 @@ describe('Tareas', () => {
     cy.get('[data-testid="todo-item-label"]').dblclick()
     cy.get('[data-testid="text-input"]').eq(1).clear()
     cy.get('[data-testid="text-input"]').eq(1).type("Comprar cerveza{enter}")
-    cy.contains('Comprar cerveza') 
-    cy.should('be.checked')
+    cy.contains('Comprar cerveza')
+
     
   
   })
   
-  
+
 
 
   it('Borrar Tarea', () => {
     cy.visit('https://todomvc.com/examples/react/dist/')
     cy.get('[data-testid="text-input"]').type("Comprar jamón{enter}")
-   //TO DO: Terminar tarea. No se encuentra elemento X para eliminar tarea (hover no parece funcionar)
+    cy.get('[data-testid="todo-item-button"]').invoke('css', 'display', 'block')
+    cy.get('[data-testid="todo-item-button"]').click()
+   
     
   })
 
