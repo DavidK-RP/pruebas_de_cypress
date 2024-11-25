@@ -49,8 +49,7 @@ describe('Tareas', () => {
     cy.get('[data-testid="text-input"]').type("Comprar jamón{enter}")
     cy.get('[data-testid="todo-item-button"]').invoke('css', 'display', 'block')
     cy.get('[data-testid="todo-item-button"]').click()
-   
-    
+    cy.get('[data-testid="todo-item-label"]').should('not.exist')
   })
 
 
